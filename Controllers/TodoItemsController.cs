@@ -12,27 +12,27 @@ namespace Krobel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TodoItemsController : ControllerBase
+    public class EmployeeItemsController : ControllerBase
     {
-        private readonly TodoContext _context;
+        private readonly EmployeeContext _context;
 
-        public TodoItemsController(TodoContext context)
+        public EmployeeItemsController(EmployeeContext context)
         {
             _context = context;
         }
 
         // GET: api/TodoItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployeeItems()
         {
-            return await _context.TodoItems.ToListAsync();
+            return await _context.EmployeeItems.ToListAsync();
         }
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
+        public async Task<ActionResult<Employee>> GetEmployeeItem(long id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem = await _context.EmployeeItems.FindAsync(id);
 
             if (todoItem == null)
             {
@@ -45,14 +45,14 @@ namespace Krobel.Controllers
         // PUT: api/TodoItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
+        public async Task<IActionResult> PutEmployeeItem(long id, Employee employee)
         {
-            if (id != todoItem.Id)
+            if (id != employee.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(todoItem).State = EntityState.Modified;
+            _context.Entry(employee).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace Krobel.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TodoItemExists(id))
+                if (!EmployeeItemExists(id))
                 {
                     return NotFound();
                 }
@@ -76,34 +76,34 @@ namespace Krobel.Controllers
         // POST: api/TodoItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
+        public async Task<ActionResult<Employee>> PostEmployeeItem(Employee employee)
         {
-            _context.TodoItems.Add(todoItem);
+            _context.EmployeeItems.Add(employee);
             await _context.SaveChangesAsync();
 
             //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
-            return CreatedAtAction(nameof(GetTodoItem), new {id = todoItem.Id}, todoItem);
+            return CreatedAtAction(nameof(GetEmployeeItem), new {id = employee.Id}, employee);
         }
 
         // DELETE: api/TodoItems/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem = await _context.EmployeeItems.FindAsync(id);
             if (todoItem == null)
             {
                 return NotFound();
             }
 
-            _context.TodoItems.Remove(todoItem);
+            _context.EmployeeItems.Remove(todoItem);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool TodoItemExists(long id)
+        private bool EmployeeItemExists(long id)
         {
-            return _context.TodoItems.Any(e => e.Id == id);
+            return _context.EmployeeItems.Any(e => e.Id == id);
         }
     }
 }

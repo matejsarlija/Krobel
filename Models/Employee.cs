@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Krobel.Models;
 
-public class TodoItem
+public class Employee
 {
     public long Id { get; set; }
     public string? Name { get; set; }
