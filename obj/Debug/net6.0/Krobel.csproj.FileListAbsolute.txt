@@ -262,3 +262,9 @@
 /home/oxi/RiderProjects/Krobel/obj/Debug/net6.0/ref/Krobel.dll
 /home/oxi/RiderProjects/Krobel/obj/Debug/net6.0/Krobel.pdb
 /home/oxi/RiderProjects/Krobel/obj/Debug/net6.0/Krobel.genruntimeconfig.cache
+/home/oxi/RiderProjects/Krobel/bin/Debug/net6.0/app/angular.json
+/home/oxi/RiderProjects/Krobel/bin/Debug/net6.0/app/package-lock.json
+/home/oxi/RiderProjects/Krobel/bin/Debug/net6.0/app/package.json
+/home/oxi/RiderProjects/Krobel/bin/Debug/net6.0/app/tsconfig.app.json
+/home/oxi/RiderProjects/Krobel/bin/Debug/net6.0/app/tsconfig.json
+/home/oxi/RiderProjects/Krobel/bin/Debug/net6.0/app/tsconfig.spec.json

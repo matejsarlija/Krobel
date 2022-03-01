@@ -20,30 +20,27 @@ namespace Krobel.Controllers
         {
             _context = context;
         }
-
-        // GET: api/TodoItems
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployeeItems()
         {
             return await _context.EmployeeItems.ToListAsync();
         }
-
-        // GET: api/TodoItems/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmployeeItem(long id)
         {
-            var todoItem = await _context.EmployeeItems.FindAsync(id);
+            var employeeItem = await _context.EmployeeItems.FindAsync(id);
 
-            if (todoItem == null)
+            if (employeeItem == null)
             {
                 return NotFound();
             }
 
-            return todoItem;
+            return employeeItem;
         }
 
-        // PUT: api/TodoItems/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployeeItem(long id, Employee employee)
         {
@@ -72,9 +69,7 @@ namespace Krobel.Controllers
 
             return NoContent();
         }
-
-        // POST: api/TodoItems
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
         public async Task<ActionResult<Employee>> PostEmployeeItem(Employee employee)
         {
@@ -84,10 +79,9 @@ namespace Krobel.Controllers
             //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
             return CreatedAtAction(nameof(GetEmployeeItem), new {id = employee.Id}, employee);
         }
-
-        // DELETE: api/TodoItems/5
+        
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTodoItem(long id)
+        public async Task<IActionResult> DeleteEmployeeItem(long id)
         {
             var todoItem = await _context.EmployeeItems.FindAsync(id);
             if (todoItem == null)

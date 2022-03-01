@@ -1,0 +1,31 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Employees</h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/employees/create/" class="btn btn-success btn-sm">Create New</a>
+    </div>
+  </div>
+  <br />
+  <table class="table table-bordered table-sm">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Date of Birth</th>
+      <th width="200px"></th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.Id }}</td>
+      <td>{{ employee.Name }}</td>
+      <td>{{ employee.DoB }}</td>
+      <td class="text-right">
+        <a href="#" [routerLink]="['/players/', employee.Id, 'details']" class="btn btn-info btn-sm">View</a> 
+        <a href="#" [routerLink]="['/players/', employee.Id, 'edit']" class="btn btn-primary btn-sm">Edit</a> 
+        <button type="button" (click)="deleteEmployee(employee.Id)" class="btn btn-danger btn-sm">Delete</button> 
+      </td>
+    </tr>
+  </table>
+</div>

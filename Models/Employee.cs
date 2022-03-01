@@ -11,7 +11,7 @@ public class Employee
     [DataType(DataType.PhoneNumber)]
     public string? PhoneNumber { get; set; }
     
-    public Gender EmployeeGender { get; set; }
+    public Gender? EmployeeGender { get; set; }
 }
 
 public enum Gender
