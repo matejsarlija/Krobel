@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Krobel.Models;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,5 +28,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "../ClientApp";
+    spa.UseAngularCliServer("start");
+});
 
 app.Run();
