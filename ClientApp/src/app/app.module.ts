@@ -10,6 +10,7 @@ import { ListComponent } from './employees/list/list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import {EmployeesService} from "./employees/employees.service";
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { RouterModule } from '@angular/router';
       {path: 'employees', component: ListComponent}
     ])
   ],
-  providers: [],
+  providers: [EmployeesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
