@@ -10,7 +10,8 @@ using Krobel.Models;
 
 namespace Krobel.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("/[controller]")]
+    [Route("/employees")]
     [ApiController]
     public class EmployeeItemsController : ControllerBase
     {
