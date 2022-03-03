@@ -22,8 +22,8 @@
       <td>{{ employee.Name }}</td>
       <td>{{ employee.DoB }}</td>
       <td class="text-right">
-        <a href="#" [routerLink]="['/players/', employee.Id, 'details']" class="btn btn-info btn-sm">View</a> 
-        <a href="#" [routerLink]="['/players/', employee.Id, 'edit']" class="btn btn-primary btn-sm">Edit</a> 
+        <a href="#" [routerLink]="['/employees/', employee.Id, 'details']" class="btn btn-info btn-sm">View</a> 
+        <a href="#" [routerLink]="['/employees/', employee.Id, 'edit']" class="btn btn-primary btn-sm">Edit</a> 
         <button type="button" (click)="deleteEmployee(employee.Id)" class="btn btn-danger btn-sm">Delete</button> 
       </td>
     </tr>

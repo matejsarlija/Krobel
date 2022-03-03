@@ -10,6 +10,16 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<EmployeeContext>(opt =>
     opt.UseInMemoryDatabase("EmployeeList"));
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
@@ -40,10 +50,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
-
-app.MapDefaultControllerRoute();
-
 app.UseStaticFiles();
 
 app.UseSpa(spa =>
@@ -52,5 +58,7 @@ app.UseSpa(spa =>
     
     spa.UseAngularCliServer("start");
 });
+
+app.MapControllers();
 
 app.Run();
