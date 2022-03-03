@@ -42,6 +42,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapDefaultControllerRoute();
+
 app.UseStaticFiles();
 
 app.UseSpa(spa =>

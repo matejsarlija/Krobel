@@ -10,7 +10,7 @@ import { Employee } from "./employee";
 })
 
 export class EmployeesService {
-    private apiUrl = "https://localhost:7273";
+    private apiUrl = "https://localhost:7273/api";
     httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json'

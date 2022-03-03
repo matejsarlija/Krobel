@@ -27,7 +27,7 @@ import {EmployeesService} from "./employees/employees.service";
       {path: 'employees', component: ListComponent}
     ])
   ],
-  providers: [EmployeesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

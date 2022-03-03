@@ -10,14 +10,13 @@ using Krobel.Models;
 
 namespace Krobel.Controllers
 {
-    //[Route("/[controller]")]
-    [Route("/employees")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeItemsController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
         private readonly EmployeeContext _context;
 
-        public EmployeeItemsController(EmployeeContext context)
+        public EmployeesController(EmployeeContext context)
         {
             _context = context;
         }
