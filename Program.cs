@@ -6,10 +6,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EmployeeContext>(opt =>
     opt.UseInMemoryDatabase("EmployeeList"));
-
 
 builder.Services.AddCors(options =>
 {
@@ -20,10 +19,9 @@ builder.Services.AddCors(options =>
             .AllowCredentials());
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
 
+builder.Services.AddRouting();
 builder.Services.AddSpaStaticFiles(configuration =>
 {
     configuration.RootPath = "ClientApp/dist";
@@ -42,15 +40,20 @@ using (var scope = app.Services.CreateScope())
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
+app.UseRouting();
+
 app.UseAuthorization();
 
-app.UseStaticFiles();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.UseSpa(spa =>
 {
@@ -58,7 +61,5 @@ app.UseSpa(spa =>
     
     spa.UseAngularCliServer("start");
 });
-
-app.MapControllers();
 
 app.Run();

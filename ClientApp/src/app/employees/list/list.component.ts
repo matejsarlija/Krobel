@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
 
   deleteEmployee(Id: number) {
     this.employeesService.deleteEmployee(Id).subscribe(res => {
-      this.employees = this.employees.filter(item => item.Id !== Id);
+      this.employees = this.employees.filter(item => item.id !== Id);
     })
   }
 

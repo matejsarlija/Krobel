@@ -1,11 +1,11 @@
 import { DatePipe } from "@angular/common";
 
 export interface Employee {
-    Id: number;
-    Name?: string;
-    DoB?: DatePipe;
-    PhoneNumber?: string;
-    Gender?: Gender
+    id: number;
+    name?: string;
+    doB?: DatePipe;
+    phoneNumber?: string;
+    employeeGender?: Gender
 
 }
 

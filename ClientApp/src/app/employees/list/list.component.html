@@ -11,20 +11,20 @@
   <br />
   <table class="table table-bordered table-sm">
     <tr>
-      <th>Id</th>
+      <th>ID</th>
       <th>Name</th>
       <th>Phone Number</th>
       <th>Date of Birth</th>
       <th width="200px"></th>
     </tr>
     <tr *ngFor="let employee of employees">
-      <td>{{ employee.Id }}</td>
-      <td>{{ employee.Name }}</td>
-      <td>{{ employee.DoB }}</td>
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.doB }}</td>
       <td class="text-right">
-        <a href="#" [routerLink]="['/employees/', employee.Id, 'details']" class="btn btn-info btn-sm">View</a> 
-        <a href="#" [routerLink]="['/employees/', employee.Id, 'edit']" class="btn btn-primary btn-sm">Edit</a> 
-        <button type="button" (click)="deleteEmployee(employee.Id)" class="btn btn-danger btn-sm">Delete</button> 
+        <a href="#" [routerLink]="['/employees/', employee.id, 'details']" class="btn btn-info btn-sm">View</a> 
+        <a href="#" [routerLink]="['/employees/', employee.id, 'edit']" class="btn btn-primary btn-sm">Edit</a> 
+        <button type="button" (click)="deleteEmployee(employee.id)" class="btn btn-danger btn-sm">Delete</button> 
       </td>
     </tr>
   </table>
