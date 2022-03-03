@@ -6,7 +6,7 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
-  { path: 'employees', redirectTo: 'players/list', pathMatch: 'full' },
+  { path: 'employees', redirectTo: 'employees/list', pathMatch: 'full' },
   { path: 'employees/list', component: ListComponent },
   { path: 'employees/:employeeId/details', component: DetailsComponent },
   { path: 'employees/create', component: CreateComponent },
