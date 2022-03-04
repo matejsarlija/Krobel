@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { Gender } from '../employee';
 import { EmployeesService } from '../employees.service';
-import { enumSelector } from 'src/app/enumSelector';
 
 @Component({
   selector: 'app-create',

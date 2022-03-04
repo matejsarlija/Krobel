@@ -6,7 +6,6 @@ export interface Employee {
     doB?: DatePipe;
     phoneNumber?: string;
     employeeGender?: Gender
-
 }
 
 export enum Gender {
