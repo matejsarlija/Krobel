@@ -35,13 +35,15 @@
         </div>
 
         <div class="form-group">
-            <mat-form-field> 
-                <mat-select placeholder="Gender" [(value)]="selectedGender">
-                    <mat-option *ngFor="let gender of genders" [value]="gender">
-                        {{ gender }}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field> 
+            <label for="name">Gender:</label>
+            <select formControlName="employeeGender"
+              id="employeeGender"
+              class="form-control">
+        <option value="">- Select gender -</option>
+        <option *ngFor="let gender of genders" [ngValue]="selectedGender">
+          {{gender}}
+        </option>
+      </select>
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="!createForm.valid">Create</button>
     </form>

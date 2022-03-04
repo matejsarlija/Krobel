@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { Gender } from '../employee';
 import { EmployeesService } from '../employees.service';
+import { enumSelector } from 'src/app/enumSelector';
 
 @Component({
   selector: 'app-create',
@@ -12,7 +13,7 @@ import { EmployeesService } from '../employees.service';
 })
 export class CreateComponent implements OnInit {
   createForm;
-  genders = Object.values(Gender)
+  genders = Object.values(Gender);
   selectedGender: Gender = this.genders[0];
 
 
