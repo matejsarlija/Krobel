@@ -1,1 +1,23 @@
-<p>details works!</p>
+<div class="container">
+    <br />
+    <h3>Employee Details</h3>
+    <br />
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h4>{{employee.name}}</h4>
+                </div>
+                <div class="col text-right">
+                    <a href="#" routerLink="/employees/list" class="btn btn-secondary btn-sm">Back to employee list</a>
+                </div>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>ID:</b> {{ employee.id}}</li>
+            <li class="list-group-item"><b>Name:</b> {{ employee.name}}</li>
+            <li class="list-group-item"><b>Phone number:</b> {{ employee.phoneNumber}}</li>
+            <li class="list-group-item"><b>Date of birth:</b> {{ employee.doB}}</li>
+        </ul>
+    </div>
+</div>
