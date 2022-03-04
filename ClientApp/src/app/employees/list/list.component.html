@@ -15,17 +15,17 @@
       <th>Name</th>
       <th>Phone Number</th>
       <th>Date of Birth</th>
-      <th width="200px"></th>
+      <th width="350px"></th>
     </tr>
     <tr *ngFor="let employee of employees">
       <td>{{ employee.id }}</td>
       <td>{{ employee.name }}</td>
       <td>{{ employee.phoneNumber}}</td>
       <td>{{ employee.doB }}</td>
-      <td class="text-right">
-        <a href="#" [routerLink]="['/employees/', employee.id, 'details']" class="btn btn-info btn-sm">View</a> 
-        <a href="#" [routerLink]="['/employees/', employee.id, 'edit']" class="btn btn-primary btn-sm">Edit</a> 
-        <button type="button" (click)="deleteEmployee(employee.id)" class="btn btn-danger btn-sm">Delete</button> 
+      <td>
+        <a href="#" [routerLink]="['/employees/', employee.id, 'details']" class="btn btn-sm btn-info">View</a> 
+        <a href="#" [routerLink]="['/employees/', employee.id, 'edit']" class="btn btn-sm btn-primary">Edit</a> 
+        <button type="button" (click)="deleteEmployee(employee.id)" class="btn btn-sm btn-danger">Delete</button> 
       </td>
     </tr>
   </table>
